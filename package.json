@@ -1,0 +1,26 @@
+{
+  "name": "qa-platform",
+  "version": "1.0.0",
+  "description": "一个Q&A问答平台",
+  "main": "server/index.js",
+  "scripts": {
+    "setup": "node setup.js",
+    "dev": "powershell -Command \"Start-Process powershell -ArgumentList '-Command', 'npm run server'; Start-Process powershell -ArgumentList '-Command', 'npm run client'\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "build-production": "bash build.sh",
+    "build-windows": "build.bat",
+    "start": "cd server && npm start",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "create-admin": "cd server && npm run create-admin",
+    "package": "npm run build-production",
+    "package-win": "npm run build-windows"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": ["qa", "platform", "mysql", "react", "nodejs"],
+  "author": "",
+  "license": "ISC"
+} 
